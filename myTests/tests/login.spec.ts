@@ -15,8 +15,6 @@ test('loginWithValidCredentials', async ({ page }) => {
   await orange.username.fill(testData.userName.validUserName);
   await orange.password.fill(testData.password.validPassword);
   await page.getByRole('button', { name: 'Login' }).click();
-  var text = await page.locator("header h6").textContent ();
-  console.log(text);
   await expect(page.locator("header h6")).toHaveText("Dashboard");
   
 
